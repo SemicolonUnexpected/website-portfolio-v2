@@ -12,7 +12,7 @@ export const Computer: React.FC<IconSvgProps> = ({
     <svg
       height={size || height}
       width={size || width}
-      viewBox="0 0 127.3 116.5"
+      viewBox="0 0 133.1 116.5"
       {...props}
     >
       <g transform="translate(-38 -45.3)">

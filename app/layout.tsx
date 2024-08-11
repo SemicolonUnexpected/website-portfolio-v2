@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jetBrains.className}>
-        <div className="flex">
+        <div className="flex padding-0">
           <div className="bg-gradient-to-r from-red-950 basis-1/5"/>
           <div className="min-w-fit basis-3/5">
             {children}

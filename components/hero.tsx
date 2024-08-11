@@ -1,18 +1,21 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useAnimate, useMotionValue, useTransform } from "framer-motion";
 import { Computer } from "./computer-art";
-
-import { cn } from "@/lib/utils";
+import { Logo } from "./icons";
 
 export default function Hero() {
-
   return(
-    <>
-      <TypingAnimation/>
-      <Computer/>
-    </>
+    <div className="relative ">
+      <div className="absolute left-20 top-16 z-10">
+        <TypingAnimation/>
+      </div>
+      <Computer size={360} className="relative z-0">
+      </Computer>
+
+      <Logo color="#ef4444" size={64} className="absolute left-24 top-16"/>
+    </div>
   );
 }
 
@@ -33,7 +36,7 @@ function TypingAnimation() {
   
   return(
     <div ref={scope}>
-      <motion.span>
+      <motion.span className="text-red-500">
         {displayText}
       </motion.span>
 
@@ -51,7 +54,7 @@ function TypingAnimation() {
 function Cursor() {
   return (
     <motion.div
-      className="inline-block bg-red-700 h-9 w-4 translate-x-1 translate-y-[0.35rem]"
+      className="inline-block bg-red-700 h-4 w-2 translate-x-1 translate-y-[0.20rem]"
       animate={{ opacity: [1, 1, 0, 0] }}
       transition={{
         duration: 1,

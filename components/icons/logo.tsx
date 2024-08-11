@@ -2,10 +2,13 @@ import * as React from "react";
 
 import { IconSvgProps } from "@/types";
 
+
+
 export const Logo: React.FC<IconSvgProps> = ({
   size = 32,
   width,
   height,
+  color="white",
   ...props
 }) => (
   <svg
@@ -15,14 +18,14 @@ export const Logo: React.FC<IconSvgProps> = ({
     width={size || height}
     {...props}
   >
-  <g stroke="white">
+  <g stroke={color}>
       <path
         fill="none"
         strokeWidth={24.734}
         d="M499.633 256A243.633 243.633 0 0 1 256 499.633 243.633 243.633 0 0 1 12.367 256 243.633 243.633 0 0 1 256 12.367 243.633 243.633 0 0 1 499.633 256z"
       />
       <g
-        fill="white"
+        fill={color}
         stroke="none"
         strokeWidth={0}
         fontFamily="JetBrains Mono"
