@@ -12,7 +12,7 @@ export const Logo: React.FC<IconSvgProps> = ({
     fill="none"
     height={size || height}
     viewBox="0 0 600 512"
-     width={size || height}
+    width={size || height}
     {...props}
   >
   <g stroke="white">
