@@ -1,6 +1,7 @@
-export { MoonFilledIcon, SunFilledIcon } from "./theming";
 export { GithubIcon } from "./github";
 export { Logo } from "./logo";
+
+export { MenuBurger } from "./menu-burger";
 
 //export { Python } from "./python";
 export { CSharp } from "./csharp";
