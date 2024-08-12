@@ -2,13 +2,19 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-import GradientLeft from "@/components/side-gradient";
+import { siteConfig } from "@/config/site";
 
 const jetBrains = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SemicolonUnexpected",
-  description: "The portfolio of a budding computer scientist",
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

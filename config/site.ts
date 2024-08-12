@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "SemicolonUnexpected Projects",
+  name: "SemicolonUnexpected Portfolio",
   description: "A showcase of the projects of github user SemicolonUnexpected",
   navItems: [
     {
