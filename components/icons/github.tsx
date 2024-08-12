@@ -24,4 +24,3 @@ export const GithubIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
-

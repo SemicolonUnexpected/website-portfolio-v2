@@ -9,12 +9,17 @@ export const MenuBurger: React.FC<IconSvgProps> = ({
   color="white",
   ...props
 }) => {
-  <svg
-    width={size || width}
-    height={size || height}
-    fill={color}
-    viewBox="0 0 17 14"
-  >
-    <path stroke={color} stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-  </svg>
-}
+  return (
+    <svg
+      width={size || width}
+      height={size || height}
+      fill="none"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M4 18L20 18" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      <path d="M4 12L20 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      <path d="M4 6L20 6" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+};
