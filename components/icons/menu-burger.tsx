@@ -1,41 +1,38 @@
 import * as React from "react";
 
-import { IconSvgProps } from "@/types";
 import { motion } from "framer-motion";
 
-type MenuBurgerProps = IconSvgProps & { isOpen: boolean }
 
-export const MenuBurger: React.FC<MenuBurgerProps> = ({
-  size = 24,
-  width,
-  height,
-  color="white",
-  isOpen = false,
-  ...props
-}) => {
+export const MenuBurger: React.FC<{ isOpen: boolean}> = ({ isOpen }) => {
   return (
-    <svg
-      width={size || width}
-      height={size || height}
-      fill="none"
+    <motion.svg
+      width="32"
+      height="32"
       viewBox="0 0 24 24"
-      {...props}
+      fill="white"
+      initial="closed"
     >
-      <motion.path d="M4 6L20 6" stroke={color} strokeWidth="2" strokeLinecap="round"
-        animate={{
-          rotate: isOpen ? 45 : 0,
+      <motion.rect x="3" y="5" rx="1" ry="1" width="18" height="2"
+        variants={{
+          open: { rotate: 45, y: 6 },
+          closed: { rotate: 0, y: 0 },
         }}
+        animate={isOpen ? "open" : "closed"}
       />
-      <motion.path d="M4 12L20 12" stroke={color} strokeWidth="2" strokeLinecap="round"
-        animate={{ 
-          scale: isOpen ? 0 : 1,
+      <motion.rect x="3" y="11" rx="1" ry="1" width="18" height="2"
+        variants={{
+          open: { scale: 0 },
+          closed: { scale: 1 },
         }}
+        animate={isOpen ? "open" : "closed"}
       />
-      <motion.path d="M4 18L20 18" stroke={color} strokeWidth="2" strokeLinecap="round"
-        animate={{
-          rotate: isOpen ? -45 : 0,
+      <motion.rect x="3" y="17" rx="1" ry="1" width="18" height="2"
+        variants={{
+          open: { rotate: -45, y: -6 },
+          closed: { rotate: 0, y: 0 },
         }}
+        animate={isOpen ? "open" : "closed"}
       />
-    </svg>
+    </motion.svg>
   );
 };

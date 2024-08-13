@@ -16,12 +16,12 @@ export const Computer: React.FC<IconSvgProps> = ({
       {...props}
     >
       <path d="m62.979 93.403v-4h28v4" fill="none" stroke="#fff" strokeWidth=".2869"/>
-      <rect x="17.859" y="8.3431" width="105.56" height="71.627" rx=".68697" ry=".60912" fill-opacity="0" stroke="#fff"/>
+      <rect x="17.859" y="8.3431" width="105.56" height="71.627" rx=".68697" ry=".60912" fillOpacity="0" stroke="#fff"/>
       <circle cx="64.529" cy="91.033" r=".66405" fill="#fff"/>
       <path d="m93.789 93.403v-4.1177h4.9873v4.1177" fill="none" stroke="#fff" strokeWidth=".3"/>
       <circle cx="66.545" cy="91.033" r=".66405" fill="#fff"/>
-      <rect x="21.507" y="11.692" width="98.269" height="65.69" rx="1.3739" ry="1.2182" fill-opacity="0" stroke="#fff" strokeWidth=".5"/>
-      <rect x="9.2215" y=".32344" width="122.84" height="87.021" rx=".41218" ry=".36547" fill-opacity="0" stroke="#fff" strokeWidth=".5"/>
+      <rect x="21.507" y="11.692" width="98.269" height="65.69" rx="1.3739" ry="1.2182" fillOpacity="0" stroke="#fff" strokeWidth=".5"/>
+      <rect x="9.2215" y=".32344" width="122.84" height="87.021" rx=".41218" ry=".36547" fillOpacity="0" stroke="#fff" strokeWidth=".5"/>
       <circle cx="68.561" cy="91.033" r=".66405" fill="#fff"/>
       <g fill="none" stroke="#fff">
         <path d="m43.979 87.403h60l-1 5.9975h-58z" strokeWidth=".5"/>
