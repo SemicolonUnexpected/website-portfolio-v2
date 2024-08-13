@@ -8,8 +8,9 @@ import { Logo } from "./icons";
 export default function Hero() {
   return(
     <div className="relative">
-      <Computer size={360} className=""/>
-      <div className="absolute left-[53px] top-[48px] w-[238px] h-[159px] p-2">
+      <Computer className="w-[360px] md:w-[500px]"/>
+      <div className="absolute break-all left-[53px] top-[29px] w-[238px] h-[159px] p-2 
+        md:left-[74px] md:top-[40px] md:w-[330px] md:h-[220px] md:p-4">
         <TypingAnimation/>
         {/*<LogoPopup className="m-auto"/>*/}
       </div>
@@ -35,7 +36,7 @@ const TypingAnimation = () => {
 
   return(
     <div ref={scope}>
-      <motion.span className="text-red-500 text-[1.2rem]">
+      <motion.span className="text-red-500 text-[1.2rem] md:text-[1.6rem]">
         {displayText}
       </motion.span>
 
@@ -43,7 +44,7 @@ const TypingAnimation = () => {
         <Cursor />
       </motion.span>
 
-      <div className="username text-white text-[1.2rem]">
+      <div className="username text-white text-[1.2rem] md:text-[1.6rem]">
         SemicolonUnexpected
       </div>
     </div>
@@ -53,7 +54,8 @@ const TypingAnimation = () => {
 function Cursor() {
   return (
     <motion.div
-      className="inline-block bg-red-700 h-4 w-2 translate-x-1 translate-y-[0.20rem] font-size-[]"
+      className="inline-block bg-red-700 h-5 w-[0.65rem] translate-x-1 translate-y-[0.19rem]
+                                         md:h-[1.9rem] md:w-[1rem] md:translate-x-1 md:translate-y-[0.4rem]"
       animate={{ opacity: [1, 1, 0, 0] }}
       transition={{
         duration: 1,
