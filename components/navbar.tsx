@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return(
     <>
-      <nav className="bg-black fixed w-full z-90 top-0 start-0 border-b border-white">
+      <nav className="sticky bg-black w-full top-0 inset-x-0 border-b border-white z-20">
         <div className="flex justify-between max-w-screen-md m-auto text-white items-center mx-auto p-4">
 
           <div className="">
@@ -38,9 +38,9 @@ export default function Navbar() {
 
         </div>
       </nav>
-      
+
       {/* Mobile menu */}
-      <div className={cn("w-full h-screen md:hidden pt-24", menuOpen ? "block" : "hidden")}>
+      <div className={cn("w-full h-screen bg-black md:hidden pt-24 z-10", menuOpen ? "fixed" : "hidden")}>
         <ul className="flex flex-col gap-4 items-center">
           {siteConfig.navItems.map((item) => (
             <li key={item.label}>

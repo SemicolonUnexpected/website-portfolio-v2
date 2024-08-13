@@ -23,18 +23,24 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+    children: React.ReactNode;
+  }>) {
   return (
     <html lang="en">
-      <body className={cn(jetBrains.className, "bg-black")}>
-        <Navbar/>
-        <div className="flex padding-0">
-          <div className="bg-gradient-to-r from-red-950 basis-1/5"/>
-          <div className="min-w-fit basis-3/5">
-            {children}
-          </div>
-          <div className="bg-gradient-to-l from-red-950 basis-1/5"/>
+      <head/>
+      <body className={cn("bg-black min-h-screen", jetBrains.className)}>
+        <div className="relative flex flex-col h-screen">
+          <Navbar/>
+
+          <main className="container mx-auto max-w-7xl flex-grow z-0">
+            <div className="bg-gradient-to-r from-red-950 basis-1/5"/>
+
+            <div className="basis-3/5">
+              {children}
+            </div>
+
+            <div className="bg-gradient-to-l from-red-950 basis-1/5"/>
+          </main>
         </div>
       </body>
     </html>

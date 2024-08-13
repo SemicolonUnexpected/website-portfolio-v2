@@ -1,12 +1,16 @@
 import * as React from "react";
 
 import { IconSvgProps } from "@/types";
+import { motion } from "framer-motion";
 
-export const MenuBurger: React.FC<IconSvgProps> = ({
+type MenuBurgerProps = IconSvgProps & { isOpen: boolean }
+
+export const MenuBurger: React.FC<MenuBurgerProps> = ({
   size = 24,
   width,
   height,
   color="white",
+  isOpen = false,
   ...props
 }) => {
   return (
@@ -17,9 +21,11 @@ export const MenuBurger: React.FC<IconSvgProps> = ({
       viewBox="0 0 24 24"
       {...props}
     >
-      <path d="M4 18L20 18" stroke={color} strokeWidth="2" strokeLinecap="round"/>
-      <path d="M4 12L20 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
-      <path d="M4 6L20 6" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      <motion.path d="M4 18L20 18" stroke={color} strokeWidth="2" strokeLinecap="round"
+        animate={{}}
+      />
+      <motion.path d="M4 12L20 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      <motion.path d="M4 6L20 6" stroke={color} strokeWidth="2" strokeLinecap="round"/>
     </svg>
   );
 };
