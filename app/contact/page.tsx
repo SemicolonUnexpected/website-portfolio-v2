@@ -1,6 +1,8 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-    </main>
+    <>
+      <h1>Any questions?</h1>
+      <a>Please feel free to contact me with any feedback or queries about this website or my projects</a>
+    </>
   );
 }
