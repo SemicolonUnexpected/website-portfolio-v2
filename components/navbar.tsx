@@ -32,7 +32,7 @@ export default function Navbar() {
           <div>
             <a className="hidden sm:flex" href={siteConfig.links.github}><GithubIcon size={29}/></a>
             <button type="button" className="flex sm:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-              <MenuBurger/>
+              <span><MenuBurger isOpen={menuOpen}/></span>
             </button>
           </div>
 
