@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head/>
-      <body className={cn("bg-black min-h-screen text-white", jetBrains.className)}>
+      <body className={cn("bg-black min-h-screen text-white w-full", jetBrains.className)}>
         <div className="relative flex flex-col h-screen">
           <Navbar/>
 
-          <main className="container mx-auto max-w-7xl flex-grow z-0">
+          <main className="mx-auto max-w-7xl flex-grow z-0">
             <div className="bg-gradient-to-r from-red-950 basis-1/5"/>
 
             <div className="basis-3/5">

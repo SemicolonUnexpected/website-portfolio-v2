@@ -3,14 +3,14 @@ import MouseCord from "@/components/mouse-cord";
 
 export default function Home() {
   return (
-    <div className="flex  min-h-screen flex-col items-center pt-10">
+    <div className="flex relative min-h-screen flex-col items-center pt-10 w-[360px]">
       <div className="z-10">
         <Hero/>
       </div>
 
       <MouseCord className="w-[500px] -translate-y-6 z-0"/>
 
-      <div>
+      <div className="absolute top-[600px] left-[10px] bg-blue-500 w-96 h-52">
         Hi, I&#39;m Matthew, aka SemicolonUnexpected. I am a budding computer scientist who is enthusiastic for mathematics and programming projects
       </div>
 
