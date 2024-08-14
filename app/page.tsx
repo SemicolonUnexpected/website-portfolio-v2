@@ -25,7 +25,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Mouse className="absolute w-28 top-[792px] left-[221px] z-0"/>
+      <Mouse className="absolute w-28 top-[1138px] left-[221px] z-0"/>
     </div>
   );
 }

@@ -2,18 +2,13 @@ import * as React from "react";
 
 import { IconSvgProps } from "@/types";
 
-export const Mouse: React.FC<IconSvgProps> = ({
-  size = 750,
-  width,
-  height,
-  ...props
+export const Mouse: React.FC<{ className: string }> = ({
+  className
 }) => {
   return (
     <svg
-      height={size || height}
-      width={size || width}
       viewBox="0 0 185.49 97.395"
-      {...props}
+      className={className}
     >
       <g transform="translate(-20.447 -82.903)">
         <g fill="none" stroke="#fff" stroke-linecap="round" strokeLinejoin="round">
