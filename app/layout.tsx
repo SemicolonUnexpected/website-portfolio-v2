@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head/>
-      <body className={cn("bg-black min-h-screen", jetBrains.className)}>
+      <body className={cn("bg-black min-h-screen text-white", jetBrains.className)}>
         <div className="relative flex flex-col h-screen">
           <Navbar/>
 
