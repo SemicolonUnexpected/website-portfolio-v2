@@ -33,13 +33,9 @@ export default function RootLayout({
           <Navbar/>
 
           <main className="mx-auto max-w-7xl flex-grow z-0">
-            <div className="bg-gradient-to-r from-red-950 basis-1/5"/>
-
             <div className="basis-3/5">
               {children}
             </div>
-
-            <div className="bg-gradient-to-l from-red-950 basis-1/5"/>
           </main>
         </div>
       </body>
