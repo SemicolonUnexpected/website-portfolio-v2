@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import { IconSvgProps } from "@/types";
-
 export const Mouse: React.FC<{ className: string }> = ({
   className
 }) => {
@@ -11,7 +9,7 @@ export const Mouse: React.FC<{ className: string }> = ({
       className={className}
     >
       <g transform="translate(-20.447 -82.903)">
-        <g fill="none" stroke="#fff" stroke-linecap="round" strokeLinejoin="round">
+        <g fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round">
           <path d="m80.283 166.06s87.901-82.628 110.49-68.413c22.587 14.215 11.389 44.259 11.389 44.259s-0.73311 3.6757-19.859 12.29c-18.672 8.4102-91.767 25.102-91.767 25.102z" strokeWidth="2"/>
           <path d="m95.492 91.841s29.245-12.902 61.334 13.201"/>
           <path d="m80.701 166.2-58.484-17.553c-10.129-3.0399 81.678-98.714 166.93-51.856" strokeWidth="2"/>

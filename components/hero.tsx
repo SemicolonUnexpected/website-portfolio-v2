@@ -30,15 +30,15 @@ const TypingAnimation = () => {
     animate([
       [count, text.length, { duration: 1, delay: 1.5, ease: "easeInOut" }],
       [".cursor", { opacity: [1, 0] }, { duration: 0, at: "+1" }],
-      [".username", { opacity: [0, 1], y: [10, 0] }, { duration: 1 }]
+      [".username", { opacity: [0, 1], y: [10, 0] }, { duration: 0.5 }]
     ]);
   }, [])
 
   return(
     <div ref={scope}>
-      <motion.span className="text-red-500 text-[1.15rem] md:text-[1.6rem]">
+      <motion.a href="https://man7.org/linux/man-pages/man1/whoami.1.html" className="text-red-500 text-[1.15rem] md:text-[1.6rem]">
         {displayText}
-      </motion.span>
+      </motion.a>
 
       <motion.span className="cursor">
         <Cursor />
