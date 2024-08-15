@@ -8,8 +8,8 @@ import { Logo } from "./icons";
 export default function Hero() {
   return(
     <div className="relative">
-      <Computer className="w-[360px] md:w-[500px]"/>
-      <div className="absolute break-all left-[53px] top-[29px] w-[238px] h-[159px] p-2 
+      <Computer className="w-[350px] md:w-[500px]"/>
+      <div className="absolute break-all left-[53px] top-[29px] w-[230px] h-[154px] p-2 
         md:left-[74px] md:top-[40px] md:w-[330px] md:h-[220px] md:p-4">
         <TypingAnimation/>
         {/*<LogoPopup className="m-auto"/>*/}
@@ -36,7 +36,7 @@ const TypingAnimation = () => {
 
   return(
     <div ref={scope}>
-      <motion.span className="text-red-500 text-[1.2rem] md:text-[1.6rem]">
+      <motion.span className="text-red-500 text-[1.15rem] md:text-[1.6rem]">
         {displayText}
       </motion.span>
 
@@ -44,7 +44,7 @@ const TypingAnimation = () => {
         <Cursor />
       </motion.span>
 
-      <div className="username text-white text-[1.2rem] md:text-[1.6rem]">
+      <div className="username text-white text-[1.15rem] md:text-[1.6rem]">
         SemicolonUnexpected
       </div>
     </div>

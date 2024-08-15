@@ -4,28 +4,29 @@ import MouseCord from "@/components/mouse-cord";
 
 export default function Home() {
   return (
-    <div className="flex relative min-h-screen flex-col items-center pt-10 w-[360px]">
+    <div className="flex relative min-h-screen flex-col items-center pt-10 w-[350px]">
       <div className="z-20">
         <Hero/>
       </div>
 
-      <MouseCord className="w-[430px] -translate-y-3 z-10"/>
+      <MouseCord/>
 
-      <div className="absolute top-[445px] flex flex-col gap-40 text-center text-ellipsis overflow-hidden">
-        <div>
+      <div className="absolute flex flex-col text-center top-[425px] gap-20 w-72
+                                                         md:top-[600px] md:gap-32 md:text-lg">
+        <a>
           Hi, I&#39;m Matthew, aka SemicolonUnexpected. I am a budding computer scientist who is enthusiastic for mathematics and programming projects
-        </div>
+        </a>
 
-        <div>
+        <a>
           I am self taught in C#, python and Typescript. I also have some experience with java in the context of the First Tech Challenge, and also some rust and haskell
-        </div>
+        </a>
 
-        <div>
+        <a>
           Linux is my primary OS, and I am very comfortable using it. I also dual boot windows to get the best of both worlds
-        </div>
+        </a>
       </div>
 
-      <Mouse className="absolute w-28 top-[1138px] left-[221px] z-0"/>
+      <Mouse className="absolute w-28 top-[1013px] left-[207px] z-0 md:top-[1455px] md:left-[228px]"/>
     </div>
   );
 }
