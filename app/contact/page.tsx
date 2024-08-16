@@ -1,7 +1,7 @@
 import ContactForm from "@/components/contact-form";
 import Spinner from "@/components/spinner";
 
-export default function Home() {
+export default function Contact() {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col items-center text-center pt-10 px-2 gap-8 md:basis-4/5">
