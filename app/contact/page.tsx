@@ -1,5 +1,4 @@
 import ContactForm from "@/components/contact-form";
-import Spinner from "@/components/spinner";
 
 export default function Contact() {
   return (

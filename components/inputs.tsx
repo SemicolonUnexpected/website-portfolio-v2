@@ -4,9 +4,10 @@ const styling: string = "w-full bg-black border-2 p-2 rounded-md outline-none pl
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   isValid?: boolean,
+  errorText?: string,
 }
 
-export const Input: React.FC<InputProps> = ({ isValid=true, className, ...props}) => {
+export const Input: React.FC<InputProps> = ({ isValid=true, className, errorText, ...props}) => {
   return(
     <input
       className={cn(styling, !isValid && "border-red-500 placeholder:text-red-500 text-red-500", className)}
