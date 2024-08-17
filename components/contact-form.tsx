@@ -4,6 +4,7 @@ import Email from "@/actions/email";
 import { useState } from "react";
 import Spinner from "@/components/spinner";
 import { cn } from "@/lib/utils";
+import { Input, TextArea } from "@/components/inputs";
 
 const inputStyle = "";
 
@@ -12,14 +13,14 @@ export default function ContactForm() {
 
   const [nameValid, setNameValid] = useState(true);
   const [emailValid, setEmailValid] = useState(true);
-  const [nameValid, setMessageValid] = useState(true);
+  const [messageValid, setMessageValid] = useState(true);
 
   return(
     <form 
       action={async (formData: FormData) => {
 
         setLoading(true);
-        const emailSent = await Email(formData);
+        //const emailSent = await Email(formData);
         setLoading(false);
         
         
@@ -27,30 +28,28 @@ export default function ContactForm() {
       className="flex flex-col gap-8 w-96 items-center"
     >
 
-      <input
-        className="w-full bg-black border-2 p-2 rounded-md outline-none placeholder:text-white"
+      <Input
         placeholder="Name"
         name="name"
-        required
+        isValid={nameValid}
       />
 
-      <input
-        type="email"
-        className="w-full bg-black border-2 p-2 rounded-md outline-none placeholder:text-white"
+      <Input
         placeholder="Email"
         name="email"
-        required
+        type="email"
+        isValid={emailValid}
       />
 
-      <textarea
-        className="w-full bg-black border-2 p-2 rounded-md outline-none placeholder:text-white h-60 text-justify"
+      <TextArea
+        className="h-60 text-justify resize-none"
         placeholder="Your message"
         name="message"
-        required
+        isValid={messageValid}
       />
 
-      <button type="submit" className="flex bg-red-500 p-3 w-32 rounded-lg gap-2 justify-center" disabled={loading}>
-        {loading ? <> <Spinner/> Sending... </> : Submit}
+      <button type="submit" className={cn("flex bg-red-500 p-3 w-32 rounded-lg gap-2 justify-center", loading && "bg-red-700 text-gray-100")} disabled={loading}>
+        {loading ? <> <Spinner/> Sending... </> : <> Submit </>}
       </button>
     </form>
   );

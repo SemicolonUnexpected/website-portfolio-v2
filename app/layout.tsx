@@ -7,7 +7,7 @@ import Navbar from "@/components/navbar";
 
 import { siteConfig } from "@/config/site";
 
-const jetBrains = JetBrains_Mono({ subsets: ["latin"] });
+const jetBrains = JetBrains_Mono({ subsets: ["latin"], display: "swap"});
 
 export const metadata: Metadata = {
   title: {
