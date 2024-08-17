@@ -3,9 +3,16 @@
 import Email from "@/actions/email";
 import { useState } from "react";
 import Spinner from "@/components/spinner";
+import { cn } from "@/lib/utils";
+
+const inputStyle = "";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
+
+  const [nameValid, setNameValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true);
+  const [nameValid, setMessageValid] = useState(true);
 
   return(
     <form 
@@ -43,8 +50,7 @@ export default function ContactForm() {
       />
 
       <button type="submit" className="flex bg-red-500 p-3 w-32 rounded-lg gap-2 justify-center" disabled={loading}>
-        {loading && <Spinner/>}
-        Submit
+        {loading ? <> <Spinner/> Sending... </> : Submit}
       </button>
     </form>
   );
