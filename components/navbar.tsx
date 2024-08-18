@@ -50,7 +50,8 @@ export default function Navbar() {
             onClick={() => {
               setMenuOpen(!menuOpen);
               router.push(item.href);
-            }>
+            }}
+            >
               <p className="text-white active:text-red-500">{item.label}</p>
             </li>
           ))}
