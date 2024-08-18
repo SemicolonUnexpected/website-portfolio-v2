@@ -8,9 +8,7 @@ export default function Home() {
       <a>Here are some projects I have been working recently...</a>
 
       <div className="flex flex-col gap-2 w-full max-w-xl items-center">
-          <Card className="w-80 h-64"/>
-          <ImageCard title="test title" text="test text" src="/test.png" alt="test image"/>
-          <IconCard title="test title" text="test text" src="/test.png" alt="test image"/>
+
       </div>
     </div>
   </div>
