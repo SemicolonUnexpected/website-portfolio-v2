@@ -8,6 +8,7 @@ import {
 } from "@/components/icons";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,8 +44,8 @@ export default function Navbar() {
       <div className={cn("w-full h-screen bg-black md:hidden pt-24 z-10", menuOpen ? "fixed" : "hidden")}>
         <ul className="flex flex-col gap-4 items-center">
           {siteConfig.navItems.map((item) => (
-            <li key={item.label}>
-              <a href={item.href} className="text-white active:text-red-500">{item.label}</a>
+            <li key={item.label} onClick={() => setMenuOpen(!menuOpen)}>
+              <a className="text-white active:text-red-500">{item.label}</a>
             </li>
           ))}
         </ul>

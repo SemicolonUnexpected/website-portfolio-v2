@@ -4,7 +4,7 @@ import MouseCord from "@/components/mouse-cord";
 
 export default function Home() {
   return (
-    <div className="flex relative min-h-screen flex-col items-center pt-10 w-[350px]">
+    <div className="flex relative min-h-screen flex-col pt-10 w-[350px] items-center justify-center m-auto">
       <div className="z-20">
         <Hero/>
       </div>
