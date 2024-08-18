@@ -21,36 +21,34 @@ export default function ContactForm() {
     <form 
       ref={ref}
       action={async (formData: FormData) => {
-        console.log(emailValid)
-        setEmailValid(false);
-        console.log("invalid", emailValid);
 
         const name = formData.get("name");
         const email = formData.get("email");
         const message = formData.get("message");
 
-        console.log(name, email, message)
+        let valuesValid: boolean = true;
 
-        if (name == "") setNameValid(false);
+        if (name == "") {
+          setNameValid(false);
+          valuesValid = false;
+        }
         else setNameValid(true);
         if (email == "" || !validateEmail(email as string)) {
           setEmailValid(false);
-          console.log("invalid", emailValid);
+          valuesValid = false;
         }
         else setEmailValid(true);
-        if (message == "") setMessageValid(false);
+        if (message == "") {
+          setMessageValid(false);
+          valuesValid = false;
+        }
         else setMessageValid(true);
 
-        console.log(!validateEmail(email as string));
-        if (!emailValid) {
-          return;
-        }
+        if (!valuesValid) return;
 
         setLoading(true);
         //const emailSent = await Email(formData);
         setLoading(false);
-
-        console.log("Hmmmm");
 
         ref.current?.reset();
       }}
