@@ -14,6 +14,7 @@ export default function ContactForm() {
   const [messageValid, setMessageValid] = useState(true);
 
   const validateEmail = (value: string) => value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+  const validateEmpty = (value: string) => value == "";
 
   const ref = useRef<HTMLFormElement>(null);
 
@@ -33,11 +34,13 @@ export default function ContactForm() {
           valuesValid = false;
         }
         else setNameValid(true);
+
         if (email == "" || !validateEmail(email as string)) {
           setEmailValid(false);
           valuesValid = false;
         }
         else setEmailValid(true);
+
         if (message == "") {
           setMessageValid(false);
           valuesValid = false;

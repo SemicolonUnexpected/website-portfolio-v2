@@ -54,7 +54,7 @@ const TypingAnimation = () => {
 function Cursor() {
   return (
     <motion.div
-      className="inline-block bg-red-700 h-5 w-[0.65rem] translate-x-1 translate-y-[0.19rem]
+      className="inline-block bg-red-500 h-5 w-[0.65rem] translate-x-1 translate-y-[0.19rem]
                                          md:h-[1.9rem] md:w-[1rem] md:translate-x-1 md:translate-y-[0.4rem]"
       animate={{ opacity: [1, 1, 0, 0] }}
       transition={{
