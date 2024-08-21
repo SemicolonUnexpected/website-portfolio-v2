@@ -50,7 +50,7 @@ export default function ContactForm() {
         if (!valuesValid) return;
 
         setLoading(true);
-        //const emailSent = await Email(formData);
+        const emailSent = await Email(formData);
         setLoading(false);
 
         ref.current?.reset();
