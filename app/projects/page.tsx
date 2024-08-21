@@ -10,9 +10,14 @@ export default function Home() {
         <h1 className="text-3xl md:text-4xl">What have I been up too?</h1>
         <a>Here are some projects I have been working recently...</a>
 
-        <div className="flex flex-col gap-2 w-full max-w-xl items-center">
-          <IconCard href="#" title="Test Icon Card" text="This is some test text it is very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long" IconComponent={Typescript}/>
-          <ImageCard href="/" title="Test Image Card" text="This is some test text it is very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long" src="/COLDER launch photo.JPG"/>
+        <div className="flex flex-col gap-2 w-full max-w-screen-md items-center">
+          <ImageCard 
+            href="/projects/robotics" 
+            title="Robotics" 
+            text="Recently I had the good fortune to compete in the First Tech Challenge nationals at Cambridge University after winning the Inspire Award at Northern Ireland regionals. This was an amazing experience, and allowed me to put my STEM skills to the test. Our team put in a huge amount of effort over the course of the whole year, and this was evident as we managed to finish as Division 1 finalists."
+            src="/ftc-centerstage.png"
+            width={250}
+          />
         </div>
       </div>
     </div>
