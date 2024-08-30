@@ -14,7 +14,6 @@ export default function ContactForm() {
   const [messageValid, setMessageValid] = useState(true);
 
   const validateEmail = (value: string) => value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-  const validateEmpty = (value: string) => value == "";
 
   const ref = useRef<HTMLFormElement>(null);
 
@@ -50,7 +49,10 @@ export default function ContactForm() {
         if (!valuesValid) return;
 
         setLoading(true);
-        const emailSent = await Email(formData);
+        console.log("loading")
+        await Email(formData);
+        await new Promise((resolve) => setTimeout(resolve, 2000))
+        console.log("done loading")
         setLoading(false);
 
         ref.current?.reset();
@@ -87,7 +89,7 @@ export default function ContactForm() {
         {!messageValid && <a className="text-red-500">Please input a valid message</a>}
       </div>
 
-      <button type="submit" className={cn("flex bg-red-500 p-3 w-32 rounded-lg gap-2 justify-center", loading && "bg-red-700 text-gray-100")} disabled={loading}>
+      <button type="submit" className={cn("flex bg-red-500 p-3 w-40 rounded-lg gap-2 justify-center", loading && "bg-red-700 text-gray-100")} disabled={loading}>
         {loading ? <> <Spinner/> Sending... </> : <> Submit </>}
       </button>
     </form>
