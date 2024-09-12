@@ -1,7 +1,7 @@
 "use client";
 
 import Email from "@/actions/email";
-import { useState, useRef } from "react";
+import { useState, useRef, FormEventHandler } from "react";
 import Spinner from "@/components/spinner";
 import { cn } from "@/lib/utils";
 import { Input, TextArea } from "@/components/inputs";
@@ -20,11 +20,12 @@ export default function ContactForm() {
   return(
     <form 
       ref={ref}
-      action={async (formData: FormData) => {
-
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const message = formData.get("message");
+      onSubmit={async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        const name: string = data.get("name") as string;
+        const email = data.get("email") as string;
+        const message = data.get("message") as string;
 
         let valuesValid: boolean = true;
 
@@ -49,10 +50,7 @@ export default function ContactForm() {
         if (!valuesValid) return;
 
         setLoading(true);
-        console.log("loading")
-        await Email(formData);
-        await new Promise((resolve) => setTimeout(resolve, 2000))
-        console.log("done loading")
+        await Email(name, email, message);
         setLoading(false);
 
         ref.current?.reset();
@@ -65,6 +63,7 @@ export default function ContactForm() {
           placeholder="Name"
           name="name"
           isValid={nameValid}
+          disabled={loading}
         />
         {!nameValid && <a className="text-red-500">Please input a valid name</a>}
       </div>
@@ -75,6 +74,7 @@ export default function ContactForm() {
           placeholder="Email"
           name="email"
           isValid={emailValid}
+          disabled={loading}
         />
         {!emailValid && <a className="text-red-500">Please input a valid email</a>}
       </div>
@@ -85,6 +85,7 @@ export default function ContactForm() {
           placeholder="Your message"
           name="message"
           isValid={messageValid}
+          disabled={loading}
         />
         {!messageValid && <a className="text-red-500">Please input a valid message</a>}
       </div>

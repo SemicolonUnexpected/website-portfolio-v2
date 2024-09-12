@@ -4,11 +4,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const Email = async (formData: FormData): Promise<boolean> =>  {
-
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const message = formData.get("message");
+const Email = async (name: string, email: string, message: string): Promise<boolean> =>  {
 
   try {
     await resend.emails.send({
